@@ -3,7 +3,7 @@
   "displayName": "Colored Markdown",
   "description": "Highlight, color, background and underline text in Markdown with simple syntax: ==highlight==, {red}text{/red}, {bg:yellow}text{/bg}, ++underline++. Live preview as you type.",
   "version": "1.0.0",
-  "publisher": "your-publisher-id",
+  "publisher": "cina-dev",
   "author": "Cina",
   "license": "MIT",
   "icon": "media/icon.png",

@@ -1,10 +1,9 @@
 # Publishing Colored Markdown
 
-Two placeholders must be replaced before you publish:
+The publisher is set to `cina-dev`. One placeholder is left to replace before you publish:
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `your-publisher-id` | `package.json` → `publisher` | Your VS Code Marketplace publisher ID |
 | `YOUR_GITHUB_USERNAME` | `package.json` → `repository`, `bugs`, `homepage` | Your GitHub user or organization name |
 
 ## 1. Put the code on GitHub
@@ -21,7 +20,7 @@ Two placeholders must be replaced before you publish:
 
 ## 2. Create a Marketplace publisher and token (one time)
 
-1. Sign in to <https://marketplace.visualstudio.com/manage> with a Microsoft account and click **Create publisher**. The **ID** you choose is your publisher ID. Put it in `package.json`.
+1. Sign in to <https://marketplace.visualstudio.com/manage> with a Microsoft account and click **Create publisher**. Use the ID `cina-dev` (already set in `package.json`).
 2. Create a Personal Access Token in Azure DevOps (<https://dev.azure.com> → *User settings* → *Personal access tokens* → *New Token*):
    - Organization: **All accessible organizations**
    - Scopes: *Custom defined* → **Marketplace → Manage**
@@ -31,7 +30,7 @@ Two placeholders must be replaced before you publish:
 
 ```bash
 npm install
-npx vsce login your-publisher-id   # paste the token
+npx vsce login cina-dev   # paste the token
 npm test
 npx vsce publish                   # or: npx vsce publish minor  (bumps the version too)
 ```
