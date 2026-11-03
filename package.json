@@ -1,0 +1,145 @@
+{
+  "name": "colored-markdown",
+  "displayName": "Colored Markdown",
+  "description": "Highlight, color, background and underline text in Markdown with simple syntax: ==highlight==, {red}text{/red}, {bg:yellow}text{/bg}, ++underline++. Live preview as you type.",
+  "version": "1.0.0",
+  "publisher": "your-publisher-id",
+  "author": "Cina",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/colored-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/colored-markdown/issues"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/colored-markdown#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "highlight",
+    "color",
+    "underline",
+    "preview",
+    "markdown-it"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./media/preview.css"
+    ],
+    "commands": [
+      {
+        "command": "coloredMarkdown.openPreview",
+        "title": "Open Live Preview to the Side",
+        "category": "Colored Markdown",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "coloredMarkdown.highlight",
+        "title": "Highlight (==text==)",
+        "category": "Colored Markdown"
+      },
+      {
+        "command": "coloredMarkdown.underline",
+        "title": "Underline (++text++)",
+        "category": "Colored Markdown"
+      },
+      {
+        "command": "coloredMarkdown.textColor",
+        "title": "Text Color…",
+        "category": "Colored Markdown"
+      },
+      {
+        "command": "coloredMarkdown.background",
+        "title": "Background Color…",
+        "category": "Colored Markdown"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "coloredMarkdown.menu",
+        "label": "Colored Markdown"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "coloredMarkdown.menu",
+          "when": "editorLangId == markdown",
+          "group": "1_modification@9"
+        }
+      ],
+      "coloredMarkdown.menu": [
+        { "command": "coloredMarkdown.highlight", "group": "1_style@1" },
+        { "command": "coloredMarkdown.underline", "group": "1_style@2" },
+        { "command": "coloredMarkdown.textColor", "group": "2_color@1" },
+        { "command": "coloredMarkdown.background", "group": "2_color@2" },
+        { "command": "coloredMarkdown.openPreview", "group": "3_preview@1" }
+      ],
+      "commandPalette": [
+        { "command": "coloredMarkdown.highlight", "when": "editorLangId == markdown" },
+        { "command": "coloredMarkdown.underline", "when": "editorLangId == markdown" },
+        { "command": "coloredMarkdown.textColor", "when": "editorLangId == markdown" },
+        { "command": "coloredMarkdown.background", "when": "editorLangId == markdown" },
+        { "command": "coloredMarkdown.openPreview", "when": "editorLangId == markdown" }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "coloredMarkdown.highlight",
+        "key": "ctrl+alt+h",
+        "mac": "cmd+alt+h",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "coloredMarkdown.underline",
+        "key": "ctrl+alt+u",
+        "mac": "cmd+alt+u",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
+    ],
+    "configuration": {
+      "title": "Colored Markdown",
+      "properties": {
+        "coloredMarkdown.editorDecorations": {
+          "type": "boolean",
+          "default": true,
+          "description": "Color highlight, color, background and underline syntax directly in the Markdown editor as you type."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint src test",
+    "test": "npm run test:unit",
+    "test:unit": "mocha \"test/unit/**/*.test.js\"",
+    "test:integration": "node ./test/integration/runTest.js",
+    "test:all": "npm run test:unit && npm run test:integration",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.2.1",
+    "eslint": "^8.57.0",
+    "markdown-it": "^14.1.0",
+    "mocha": "^10.7.3"
+  }
+}

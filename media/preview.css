@@ -1,0 +1,59 @@
+/* Colored Markdown – styles injected into the VS Code Markdown preview. */
+:root {
+  --cm-red: #e5484d;
+  --cm-blue: #2f7de1;
+  --cm-green: #2f9e44;
+  --cm-yellow: #d4a106;
+  --cm-orange: #f76b15;
+  --cm-purple: #8e4ec6;
+  --cm-pink: #d6409f;
+  --cm-cyan: #0ea5c6;
+  --cm-teal: #12a594;
+  --cm-gray: #8b8d98;
+  --cm-brown: #a1662f;
+  --cm-black: #1c1c1c;
+  --cm-white: #f5f5f5;
+  --cm-highlight-bg: #fff59d;
+  --cm-highlight-fg: #1c1c1c;
+}
+
+mark.cm-highlight {
+  background-color: var(--cm-highlight-bg);
+  color: var(--cm-highlight-fg);
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+u.cm-underline {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.cm-color-red { color: var(--cm-red); }
+.cm-color-blue { color: var(--cm-blue); }
+.cm-color-green { color: var(--cm-green); }
+.cm-color-yellow { color: var(--cm-yellow); }
+.cm-color-orange { color: var(--cm-orange); }
+.cm-color-purple { color: var(--cm-purple); }
+.cm-color-pink { color: var(--cm-pink); }
+.cm-color-cyan { color: var(--cm-cyan); }
+.cm-color-teal { color: var(--cm-teal); }
+.cm-color-gray, .cm-color-grey { color: var(--cm-gray); }
+.cm-color-brown { color: var(--cm-brown); }
+.cm-color-black { color: var(--cm-black); }
+.cm-color-white { color: var(--cm-white); }
+
+.cm-bg { padding: 0 0.2em; border-radius: 3px; }
+.cm-bg-red { background-color: rgba(229, 72, 77, 0.30); }
+.cm-bg-blue { background-color: rgba(47, 125, 225, 0.28); }
+.cm-bg-green { background-color: rgba(47, 158, 68, 0.28); }
+.cm-bg-yellow { background-color: #fff59d; color: #1c1c1c; }
+.cm-bg-orange { background-color: rgba(247, 107, 21, 0.30); }
+.cm-bg-purple { background-color: rgba(142, 78, 198, 0.28); }
+.cm-bg-pink { background-color: rgba(214, 64, 159, 0.28); }
+.cm-bg-cyan { background-color: rgba(14, 165, 198, 0.28); }
+.cm-bg-teal { background-color: rgba(18, 165, 148, 0.28); }
+.cm-bg-gray, .cm-bg-grey { background-color: rgba(139, 141, 152, 0.30); }
+.cm-bg-brown { background-color: rgba(161, 102, 47, 0.30); }
+.cm-bg-black { background-color: #1c1c1c; color: #f5f5f5; }
+.cm-bg-white { background-color: #f5f5f5; color: #1c1c1c; }
