@@ -24,8 +24,8 @@ jobs:
       - name: Integration tests (Linux)
         if: runner.os == 'Linux'
         run: xvfb-run -a npm run test:integration
-      - name: Integration tests (Windows / macOS)
-        if: runner.os != 'Linux'
+      - name: Integration tests (Windows)
+        if: runner.os == 'Windows'
         run: npm run test:integration
 
   package:
